@@ -1,0 +1,16 @@
+<div class="products-container">
+  <mat-card *ngFor="let property of constantProperties" class="product-card">
+    <div class="product-content">
+      <div class="product-image-container">
+          <img class="product-image" src = {{property.imageUrl}} alt="">
+      </div>
+      <div class="product-details">
+        <mat-card-title>{{property.name}}</mat-card-title>
+        <mat-card-content>
+          <p><strong>Price:</strong> {{property.price}}</p>
+          <p><strong>Description:</strong> {{property.description}}</p>
+        </mat-card-content>
+      </div>
+    </div>
+  </mat-card>
+</div>

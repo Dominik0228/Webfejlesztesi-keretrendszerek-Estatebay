@@ -1,0 +1,23 @@
+<mat-sidenav-container>
+  <mat-sidenav position="end" #sidenav>
+    <app-navbar [sidenav]="sidenav" [isLoggedIn]="isLoggedIn" (logoutEvent)="logout()"></app-navbar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <nav>
+        <ul>
+          <li><a routerLink="/buy">Buy</a></li>
+          <li><a routerLink="/sell">Sell</a></li>
+        </ul>
+      </nav>
+      <div class="title"><a class="title" routerLink="/home">Estatebay</a></div>
+      <button
+        mat-button 
+        (click)="onToggleSidenav(sidenav)"
+        class="menu-toggle-button">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet />
+  </mat-sidenav-content>
+</mat-sidenav-container>

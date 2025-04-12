@@ -1,0 +1,27 @@
+<div class="profile-container">
+    <mat-card>
+        <mat-card-title>User Profile</mat-card-title> 
+        <mat-card-content>
+            <div class="profile-info">
+            <div class="avatar-container">
+                <div class="avatar mat-elevation-z2">{{existingProfile[userId].avatar}}</div>
+            </div>
+            <div class="user-details">
+                <h3 class="user-name">{{existingProfile[userId].name}}</h3>
+                <div class="user-email">
+                    <mat-icon>email</mat-icon>
+                    <span>{{existingProfile[userId].email}}</span>
+                </div>
+                <div class="user-sells">
+                    <h3 class="user-sells">Selled Properties:</h3>
+                    @for (sell of existingProfile; track $index) {
+                        @if(existingProfile[userId].selledProperties[$index]){
+                            <ol>{{$index+1}}. {{existingProfile[userId].selledProperties[$index]}}</ol>
+                        }
+                    }
+                </div>
+            </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

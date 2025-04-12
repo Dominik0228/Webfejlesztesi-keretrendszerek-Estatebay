@@ -1,0 +1,55 @@
+<mat-card class="register-container">
+    <mat-card-title class="register-title">Create Account</mat-card-title>
+
+    <form [formGroup]="registerForm" (ngSubmit)="register()" class="register-form">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email">
+            <div *ngIf="registerForm.get('email')?.hasError('required') && registerForm.get('email')?.touched" class="error-message">
+                Email is required!
+            </div>
+            <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstname">
+            <div *ngIf="registerForm.get('firstname')?.hasError('required') && registerForm.get('firstname')?.touched" class="error-message">
+                First Name is required!
+            </div>
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastname">
+            <div *ngIf="registerForm.get('lastname')?.hasError('required') && registerForm.get('lastname')?.touched" class="error-message">
+                Last Name is required!
+            </div>
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+            <div *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched" class="error-message">
+                Password is required!
+            </div>
+            <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" formControlName="rePassword">
+            <div *ngIf="registerForm.get('rePassword')?.hasError('required') && registerForm.get('rePassword')?.touched" class="error-message">
+                Password Confirmation required!
+            </div>
+            <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+
+        <div class="buttons-row">
+            <button mat-button type="submit"><a class="button-text" (click)="openDialog()">Register</a></button>
+            <button mat-button [routerLink]="['/login']"><a class="button-text">Login</a></button>
+        </div>
+        </form>
+</mat-card>

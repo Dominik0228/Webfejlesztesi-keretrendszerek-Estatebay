@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #2c3a2c;
+}
+
+.header-container {
+    position: relative;
+    text-align: center;
+    background-color: black;
+}
+
+.header-image {
+    opacity: 70%;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.header-title {
+    font-size: 3vw;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2vw;
+    text-transform: uppercase;
+}
+
+.header-description {
+    font-size: 1.7vw;
+    font-weight: bold;
+    line-height: 1.6;
+    color: white;
+}
+  
+.greeting-container {
+    margin-top: -80px;
+    text-align: center;
+    padding: 120px 20px;
+    background-color: #eff2f3;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+  
+.greeting-title {
+    font-size: 2rem;
+    color: #2c3a2c;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+  
+.greeting-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #2c3a2c;
+}
+  
+.card-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+  
+.product-card {
+    width: 280px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+  
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+  
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+  
+.description {
+    text-align: center;
+}
+  
+.description h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+  
+.description p {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+  
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    overflow: hidden;
+}
+  
+.image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
