@@ -1,7 +1,7 @@
 # Webfejlesztesi-Keretrendszerek-EstateBay
-Estatebay - Real Estate Property Buying and Selling Website
+Projekt neve: Estatebay - Real Estate Property Buying and Selling Website
 
-Projekt neve: Eladó ingatlan kereső oldal
+Projekt témája: Eladó ingatlan kereső oldal
 
 # EladoIngatlan
 
