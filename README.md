@@ -1,3 +1,8 @@
+# Webfejlesztesi-Keretrendszerek-EstateBay
+Estatebay - Real Estate Property Buying and Selling Website
+
+Projekt neve: Eladó ingatlan kereső oldal
+
 # EladoIngatlan
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
