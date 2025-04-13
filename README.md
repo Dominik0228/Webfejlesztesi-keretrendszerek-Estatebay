@@ -3,6 +3,16 @@ Projekt neve: Estatebay - Real Estate Property Buying and Selling Website
 
 Projekt témája: Eladó ingatlan kereső oldal
 
+Próba felhasználók:
+-email: tesztelek@gmail.com
+-jelszó: tesztelek
+
+-email: norris@gmail.com
+-jelszó: chucknorris
+
+-email: walker@gmail.com
+-jelszó: johnywalker
+
 # EladoIngatlan
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
