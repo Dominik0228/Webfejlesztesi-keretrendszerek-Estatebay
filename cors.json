@@ -1,0 +1,12 @@
+[
+  {
+    "origin": [
+      "http://localhost:4200",
+      "https://estatebay.web.app",
+      "https://www.estatebay.hu"
+    ],
+    "method": ["GET", "POST", "PUT", "DELETE"],
+    "responseHeader": ["Content-Type", "Authorization"],
+    "maxAgeSeconds": 3600
+  }
+]

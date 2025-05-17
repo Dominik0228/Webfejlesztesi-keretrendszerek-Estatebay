@@ -1,9 +1,11 @@
 export interface Property {
-    id: number;
-    size: number;
-    name: string;
-    location: string;
-    seller: string;
-    price: boolean;
-    description?: string;
-  }
+  id: string;
+  name: string;
+  location: string;
+  size: number;
+  price: number;
+  seller: string;
+  userId: string;
+  imageUrl?: string;
+  description?: string;
+}

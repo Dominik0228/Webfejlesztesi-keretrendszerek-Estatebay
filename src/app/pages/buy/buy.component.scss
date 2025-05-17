@@ -115,3 +115,26 @@
   .product-details button:hover {
     background-color: #302929;
   }
+
+  .buy-button {
+  width: 100%;
+  background-color: #2c3a2c;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 12px;
+}
+
+.buy-button:hover {
+  background-color: #3f5a3f;
+}
+
+.buy-button:disabled {
+  background-color: #a0a8a0;
+  cursor: not-allowed;
+}

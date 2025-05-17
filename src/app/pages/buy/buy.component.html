@@ -1,15 +1,20 @@
 <div class="products-container">
-  <mat-card *ngFor="let property of constantProperties" class="product-card">
+  <mat-card *ngFor="let property of properties" class="product-card">
     <div class="product-content">
       <div class="product-image-container">
-          <img class="product-image" src = {{property.imageUrl}} alt="">
+        <img class="product-image" [src]="property.imageUrl || 'assets/default-property.jpg'" alt="Property image">
       </div>
       <div class="product-details">
-        <mat-card-title>{{property.name}}</mat-card-title>
+        <mat-card-title>{{ property.name }}</mat-card-title>
         <mat-card-content>
-          <p><strong>Price:</strong> {{property.price}}</p>
-          <p><strong>Description:</strong> {{property.description}}</p>
+          <p><strong>Price:</strong> ${{ property.price | number }}</p>
+          <p><strong>Location:</strong> {{ property.location }}</p>
+          <p><strong>Size:</strong> {{ property.size }} m²</p>
+          <p><strong>Description:</strong> {{ property.description || 'Nincs leírás' }}</p>
         </mat-card-content>
+        <button class="buy-button" (click)="buy(property)" [disabled]="isLoading">
+          Buy
+        </button>
       </div>
     </div>
   </mat-card>

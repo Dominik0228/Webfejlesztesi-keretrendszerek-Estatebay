@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { AuthService } from './shared/services/auth-service.service';
 
 @Component({
   selector: 'app-root',
@@ -26,10 +27,19 @@ export class AppComponent implements OnInit {
   title = 'Estatebay';
   isLoggedIn = false;
 
-  constructor() {}
+  constructor(private authService: AuthService) {
+    console.log('AppComponent: AuthService injected');
+  }
 
   ngOnInit(): void {
     this.checkLoginStatus();
+
+    console.log('AppComponent ngOnInit');
+
+    this.authService.currentUser$.subscribe(user => {
+      this.isLoggedIn = !!user;
+      console.log('isLoggedIn:', this.isLoggedIn);
+    });
   }
 
   checkLoginStatus(): void {

@@ -1,18 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatCard } from '@angular/material/card';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-message-dialog',
-  imports: [MatCard],
-  template: `
-   <mat-card class="message-container">
-    <div class="message-text">
-        <p class="header-description">Register was successful!</p>
-    </div>
-  </mat-card>
-  `,
-  styleUrl: './message-dialog.component.scss'
+  templateUrl: './message-dialog.component.html',
+  styleUrls: ['./message-dialog.component.scss'],
+  standalone: true,
+  imports: [MatCard]
 })
 export class MessageDialogComponent {
-
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { title: string; message: string }) {}
 }
