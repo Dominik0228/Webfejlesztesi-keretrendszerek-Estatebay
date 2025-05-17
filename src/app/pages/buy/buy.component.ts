@@ -6,7 +6,6 @@ import { Property } from '../../shared/models/property';
 import { User } from '../../shared/models/user';
 import { AuthService } from '../../shared/services/auth-service.service';
 import { firstValueFrom } from 'rxjs';
-import { doc, getDoc, updateDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-buy',
