@@ -12,7 +12,7 @@
           <p><strong>Size:</strong> {{ property.size }} m²</p>
           <p><strong>Description:</strong> {{ property.description || 'Nincs leírás' }}</p>
         </mat-card-content>
-        <button class="buy-button" (click)="buy(property)" [disabled]="isLoading">
+        <button class="buy-button" (click)="buyProperty(property)">
           Buy
         </button>
       </div>
