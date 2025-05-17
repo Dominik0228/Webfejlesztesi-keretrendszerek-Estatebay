@@ -1,1 +1,102 @@
-<p>sell works!</p>
+<div class="sell-form-container">
+  <h2>Új ingatlan hozzáadása</h2>
+  <form (ngSubmit)="addProperty()" #propertyForm="ngForm" novalidate>
+
+    <label for="name">Név</label>
+    <input
+      id="name"
+      type="text"
+      placeholder="Név"
+      [(ngModel)]="newProperty.name"
+      name="name"
+      required
+      #name="ngModel"
+      [class.invalid]="name.invalid && name.touched"
+    />
+    <div *ngIf="name.invalid && name.touched" class="error-message">
+      Kérlek, add meg az ingatlan nevét!
+    </div>
+
+    <label for="location">Helyszín</label>
+    <input
+      id="location"
+      type="text"
+      placeholder="Helyszín"
+      [(ngModel)]="newProperty.location"
+      name="location"
+      required
+      #location="ngModel"
+      [class.invalid]="location.invalid && location.touched"
+    />
+    <div *ngIf="location.invalid && location.touched" class="error-message">
+      Kérlek, add meg a helyszínt!
+    </div>
+
+    <label for="size">Méret (m²)</label>
+    <input
+      id="size"
+      type="number"
+      placeholder="Méret (m²)"
+      [(ngModel)]="newProperty.size"
+      name="size"
+      required
+      min="1"
+      #size="ngModel"
+      [class.invalid]="size.invalid && size.touched"
+    />
+    <div *ngIf="size.invalid && size.touched" class="error-message">
+      Kérlek, adj meg egy érvényes méretet!
+    </div>
+
+    <label for="price">Ár ($)</label>
+    <input
+      id="price"
+      type="number"
+      placeholder="Ár ($)"
+      [(ngModel)]="newProperty.price"
+      name="price"
+      required
+      min="0"
+      #price="ngModel"
+      [class.invalid]="price.invalid && price.touched"
+    />
+    <div *ngIf="price.invalid && price.touched" class="error-message">
+      Kérlek, adj meg egy érvényes árat!
+    </div>
+
+    <label for="image">Kép feltöltése</label>
+    <input
+      id="image"
+      type="file"
+      (change)="onFileSelected($event)"
+      accept="image/*"
+    />
+    <div *ngIf="fileUploadError" class="error-message">
+      {{ fileUploadError }}
+    </div>
+
+
+    <label for="description">Leírás</label>
+    <textarea
+      id="description"
+      placeholder="Leírás"
+      [(ngModel)]="newProperty.description"
+      name="description"
+      rows="4"
+    ></textarea>
+
+    <button type="submit" [disabled]="propertyForm.invalid">Hozzáadás</button>
+  </form>
+
+  <hr />
+
+  <h2>Ingatlanjaim</h2>
+  <div *ngFor="let property of properties" class="property-item">
+    <h3>{{ property.name }}</h3>
+    <p><strong>Helyszín:</strong> {{ property.location }}</p>
+    <p><strong>Ár:</strong> {{ property.price | number }} Ft</p>
+    <p><strong>Méret:</strong> {{ property.size }} m²</p>
+    <p><strong>Leírás:</strong> {{ property.description }}</p>
+    <button (click)="deleteProperty(property.id)">Törlés</button>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-  <mat-sidenav position="end" #sidenav>
+  <mat-sidenav position="end" mode="over" #sidenav>
     <app-navbar [sidenav]="sidenav" [isLoggedIn]="isLoggedIn" (logoutEvent)="logout()"></app-navbar>
   </mat-sidenav>
   <mat-sidenav-content>
